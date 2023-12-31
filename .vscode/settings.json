@@ -1,0 +1,15 @@
+{
+  // "editor.fontSize": 14,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  //  "[typescriptreact]": {
+  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  //  },
+  "eslint.enable": true,
+  // "eslint.autoFixOnSave": false,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.options": {
+    "extensinons": [".ts", ".js", ".tsx", ".jsx"]
+  }
+}
