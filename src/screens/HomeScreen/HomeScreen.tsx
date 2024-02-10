@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, FlatList, Dimensions, ActivityIndicator, StatusBar, ScrollView } from 'react-native'
-import { upcomingMovies, nowPlayingMovies, popularMovies, baseImagePath } from '../../api/apicall'
+import { baseImagePath } from '../../api/apicall'
+import useMoviesList from '../../hooks/MovieList/useMovieList'
 
 import InputHeader from '../../components/InputHeader'
 import CategoryHeader from '../../components/CategoryHeader'
@@ -13,40 +14,12 @@ const { width, height } = Dimensions.get('window')
 
 import styles from './styles'
 
-const getNowPlayingMoviesList = async () => {
-  try {
-    let response = await fetch(nowPlayingMovies)
-    let json = await response.json()
-    return json
-  } catch (error) {
-    console.error(' Something went wrong in getNowPlayingMoviesList Function', error)
-  }
-}
-
-const getUpcomingMoviesList = async () => {
-  try {
-    let response = await fetch(upcomingMovies)
-    let json = await response.json()
-    return json
-  } catch (error) {
-    console.error(' Something went wrong in getUpcomingMoviesList Function', error)
-  }
-}
-
-const getPopularMoviesList = async () => {
-  try {
-    let response = await fetch(popularMovies)
-    let json = await response.json()
-    return json
-  } catch (error) {
-    console.error(' Something went wrong in getPopularMoviesList Function', error)
-  }
-}
-
 const HomeScreen = ({ navigation }: any) => {
   const [nowPlayingMoviesList, setNowPlayingMoviesList] = useState<any>(undefined)
   const [popularMoviesList, setPopularMoviesList] = useState<any>(undefined)
   const [upcomingMoviesList, setUpcomingMoviesList] = useState<any>(undefined)
+
+  const { getNowPlayingMoviesList, getUpcomingMoviesList, getPopularMoviesList } = useMoviesList()
 
   useEffect(() => {
     ;(async () => {
