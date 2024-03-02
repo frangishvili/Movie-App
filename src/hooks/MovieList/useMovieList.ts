@@ -1,33 +1,54 @@
 import { upcomingMovies, nowPlayingMovies, popularMovies } from '../../api/apicall'
 
+/**
+ * Custom hook to fetch lists of movies.
+ * @returns {{
+ *   getNowPlayingMoviesList: Function,
+ *   getUpcomingMoviesList: Function,
+ *   getPopularMoviesList: Function
+ * }} Object containing functions to fetch lists of movies.
+ */
+
 const useMoviesList = () => {
+  /**
+   * Fetches the list of now playing movies.
+   * @returns {Promise<any>} Promise that resolves to the list of now playing movies.
+   */
   const getNowPlayingMoviesList = async () => {
     try {
       let response = await fetch(nowPlayingMovies)
       let json = await response.json()
       return json
     } catch (error) {
-      console.error(' Something went wrong in getNowPlayingMoviesList Function', error)
+      console.error('Something went wrong in getNowPlayingMoviesList Function', error)
     }
   }
 
+  /**
+   * Fetches the list of upcoming movies.
+   * @returns {Promise<any>} Promise that resolves to the list of upcoming movies.
+   */
   const getUpcomingMoviesList = async () => {
     try {
       let response = await fetch(upcomingMovies)
       let json = await response.json()
       return json
     } catch (error) {
-      console.error(' Something went wrong in getUpcomingMoviesList Function', error)
+      console.error('Something went wrong in getUpcomingMoviesList Function', error)
     }
   }
 
+  /**
+   * Fetches the list of popular movies.
+   * @returns {Promise<any>} Promise that resolves to the list of popular movies.
+   */
   const getPopularMoviesList = async () => {
     try {
       let response = await fetch(popularMovies)
       let json = await response.json()
       return json
     } catch (error) {
-      console.error(' Something went wrong in getPopularMoviesList Function', error)
+      console.error('Something went wrong in getPopularMoviesList Function', error)
     }
   }
 
