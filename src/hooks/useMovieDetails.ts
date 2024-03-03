@@ -1,4 +1,4 @@
-import { movieCastDetails, movieDetails } from '../../api/apicall'
+import { movieCastDetails, movieDetails } from '../api/apicall'
 
 /**
  * Custom hook to fetch details of a movie and its cast details.

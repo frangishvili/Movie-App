@@ -1,4 +1,4 @@
-import { upcomingMovies, nowPlayingMovies, popularMovies } from '../../api/apicall'
+import { upcomingMovies, nowPlayingMovies, popularMovies } from '../api/apicall'
 
 /**
  * Custom hook to fetch lists of movies.
