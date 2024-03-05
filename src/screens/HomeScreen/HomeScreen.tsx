@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, FlatList, Dimensions, ActivityIndicator, StatusBar, ScrollView } from 'react-native'
 import { baseImagePath } from '../../api/apicall'
-import useMoviesList from '../../hooks/MovieList/useMovieList'
+import useMoviesList from '../../hooks/useMovieList'
 
 import InputHeader from '../../components/InputHeader'
 import CategoryHeader from '../../components/CategoryHeader'
