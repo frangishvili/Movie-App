@@ -1,4 +1,8 @@
-const useBookingServices = () => {
+import { useState } from 'react'
+import EncryptedStorage from 'react-native-encrypted-storage'
+import { ToastAndroid } from 'react-native'
+
+const useBookingServices = (route: any, navigation: any) => {
   const timeArray: string[] = ['10:30', '12:30', '14:30', '15:00', '19:30', '21:00']
 
   const generateDate = () => {
@@ -20,7 +24,7 @@ const useBookingServices = () => {
     let numColumn = 3
     let rowArray = []
     let start = 1
-    let reachnine = false
+    let reachNine = false
 
     for (let i = 0; i < numRow; i++) {
       let columnArray = []
@@ -36,10 +40,10 @@ const useBookingServices = () => {
       if (i === 3) {
         numColumn += 2
       }
-      if (numColumn < 9 && !reachnine) {
+      if (numColumn < 9 && !reachNine) {
         numColumn += 2
       } else {
-        reachnine = true
+        reachNine = true
         numColumn -= 2
       }
       rowArray.push(columnArray)
@@ -47,7 +51,76 @@ const useBookingServices = () => {
     return rowArray
   }
 
-  return { timeArray, generateDate, generateSeats }
+  const [dateArray, setDateArray] = useState<any[]>(generateDate())
+  const [selectedDateIndex, setSelectedDateIndex] = useState<any>()
+  const [price, setPrice] = useState<number>(0)
+  const [twoDSeatArray, setTwoDSeatArray] = useState<any[][]>(generateSeats())
+  const [selectedSeatArray, setSelectedSeatArray] = useState([])
+  const [selectedTimeIndex, setSelectedTimeIndex] = useState<any>()
+
+  const selectSeat = (index: number, subindex: number, num: number) => {
+    if (!twoDSeatArray[index][subindex].taken) {
+      let array: any = [...selectedSeatArray]
+      let temp = [...twoDSeatArray]
+      temp[index][subindex].selected = !temp[index][subindex].selected
+      if (!array.includes(num)) {
+        array.push(num)
+        setSelectedSeatArray(array)
+      } else {
+        const tempindex = array.indexOf(num)
+        if (tempindex > -1) {
+          array.splice(tempindex, 1)
+          setSelectedSeatArray(array)
+        }
+      }
+      setPrice(array.length * 5.0)
+      setTwoDSeatArray(temp)
+    }
+  }
+
+  const BookSeats = async () => {
+    if (
+      selectedSeatArray.length !== 0 &&
+      timeArray[selectedTimeIndex] !== undefined &&
+      dateArray[selectedDateIndex] !== undefined
+    ) {
+      try {
+        await EncryptedStorage.setItem(
+          'ticket',
+          JSON.stringify({
+            seatArray: selectedSeatArray,
+            time: timeArray[selectedTimeIndex],
+            date: dateArray[selectedDateIndex],
+            ticketImage: route.params.PosterImage,
+          }),
+        )
+      } catch (error) {
+        console.error('Something went Wrong while storing in BookSeats Functions', error)
+      }
+      navigation.navigate('Ticket', {
+        seatArray: selectedSeatArray,
+        time: timeArray[selectedTimeIndex],
+        date: dateArray[selectedDateIndex],
+        ticketImage: route.params.PosterImage,
+      })
+    } else {
+      ToastAndroid.showWithGravity('Please Select Seats, Date and Time of the Show', ToastAndroid.SHORT, ToastAndroid.BOTTOM)
+    }
+  }
+
+  return {
+    dateArray,
+    timeArray,
+    twoDSeatArray,
+    selectedSeatArray,
+    selectedDateIndex,
+    setSelectedDateIndex,
+    selectedTimeIndex,
+    setSelectedTimeIndex,
+    price,
+    selectSeat,
+    BookSeats,
+  }
 }
 
 export default useBookingServices
