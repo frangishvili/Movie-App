@@ -1,9 +1,16 @@
 import { useState } from 'react'
+import { Alert } from 'react-native'
 import EncryptedStorage from 'react-native-encrypted-storage'
-import { ToastAndroid } from 'react-native'
 
 const useBookingServices = (route: any, navigation: any) => {
   const timeArray: string[] = ['10:30', '12:30', '14:30', '15:00', '19:30', '21:00']
+
+  /**
+   * Generates an array of the next seven days, starting from the current date.
+   * Each day is represented as an object with two properties: 'date' and 'day'.
+   * 'date' is the day of the month (1-31) and 'day' is the day of the week ('Sun'-'Sat').
+   * @returns {Array} An array of objects representing the next seven days.
+   */
 
   const generateDate = () => {
     const date = new Date()
@@ -18,6 +25,14 @@ const useBookingServices = (route: any, navigation: any) => {
     }
     return weekdays
   }
+
+  /**
+   * Generates a two-dimensional array representing the seating arrangement.
+   * Each seat is represented as an object with properties: 'number', 'taken', and 'selected'.
+   * 'number' is the seat number, 'taken' indicates if the seat is already taken, and 'selected' indicates if the seat is selected by the user.
+   * The seating arrangement starts with 3 seats per row, increases to 5 seats per row after the 4th row, and then decreases back to 3 seats per row after reaching 9 seats per row.
+   * @returns {Array} A two-dimensional array representing the seating arrangement.
+   */
 
   const generateSeats = () => {
     let numRow = 8
@@ -58,6 +73,18 @@ const useBookingServices = (route: any, navigation: any) => {
   const [selectedSeatArray, setSelectedSeatArray] = useState([])
   const [selectedTimeIndex, setSelectedTimeIndex] = useState<any>()
 
+  /**
+   * Selects or deselects a seat in the seating arrangement.
+   * If the seat is not taken, it toggles the 'selected' status of the seat.
+   * If the seat number is not in the selectedSeatArray, it adds the seat number to the array.
+   * If the seat number is already in the selectedSeatArray, it removes the seat number from the array.
+   * It also updates the price based on the number of selected seats (each seat costs 5.0).
+   * Finally, it updates the twoDSeatArray to reflect the new seating arrangement.
+   * @param {number} index - The index of the row in the seating arrangement.
+   * @param {number} subindex - The index of the seat in the row.
+   * @param {number} num - The number of the seat.
+   */
+
   const selectSeat = (index: number, subindex: number, num: number) => {
     if (!twoDSeatArray[index][subindex].taken) {
       let array: any = [...selectedSeatArray]
@@ -77,6 +104,13 @@ const useBookingServices = (route: any, navigation: any) => {
       setTwoDSeatArray(temp)
     }
   }
+
+  /**
+   * Books the selected seats for a show at a specific date and time.
+   * If the selected seats, date, and time are valid, it stores the booking information in encrypted storage and navigates to the 'Ticket' screen with the booking details.
+   * If the selected seats, date, or time are not valid, it shows an alert message asking the user to select seats, date, and time of the show.
+   * @throws Will throw an error if the booking information cannot be stored in encrypted storage.
+   */
 
   const BookSeats = async () => {
     if (
@@ -104,7 +138,7 @@ const useBookingServices = (route: any, navigation: any) => {
         ticketImage: route.params.PosterImage,
       })
     } else {
-      ToastAndroid.showWithGravity('Please Select Seats, Date and Time of the Show', ToastAndroid.SHORT, ToastAndroid.BOTTOM)
+      Alert.alert('Message', 'Please Select Seats, Date and Time of the Show')
     }
   }
 
@@ -112,7 +146,6 @@ const useBookingServices = (route: any, navigation: any) => {
     dateArray,
     timeArray,
     twoDSeatArray,
-    selectedSeatArray,
     selectedDateIndex,
     setSelectedDateIndex,
     selectedTimeIndex,
