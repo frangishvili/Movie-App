@@ -12,6 +12,7 @@ import {
 } from 'react-native'
 import { baseImagePath, movieCastDetails, movieDetails } from '../../api/apicall'
 import { COLORS } from '../../theme/theme'
+import useMovieDetails from '../../hooks/useMovieDetails'
 import AppHeader from '../../components/AppHeader'
 import LinearGradient from 'react-native-linear-gradient'
 import CustomIcon from '../../components/CustomIcon'
@@ -20,29 +21,11 @@ import CastCard from '../../components/CastCard'
 
 import styles from './styles'
 
-const getMovieDetails = async (movieid: number) => {
-  try {
-    let response = await fetch(movieDetails(movieid))
-    let json = await response.json()
-    return json
-  } catch (error) {
-    console.error('Something Went wrong in getMoviesDetails Function', error)
-  }
-}
-
-const getMovieCastDetails = async (movieid: number) => {
-  try {
-    let response = await fetch(movieCastDetails(movieid))
-    let json = await response.json()
-    return json
-  } catch (error) {
-    console.error('Something Went wrong in getMovieCastDetails Function', error)
-  }
-}
-
 const MovieDetailsScreen = ({ navigation, route }: any) => {
   const [movieData, setMovieData] = useState<any>(undefined)
   const [movieCastData, setmovieCastData] = useState<any>(undefined)
+
+  const { getMovieDetails, getMovieCastDetails } = useMovieDetails()
 
   useEffect(() => {
     const fetchMovieData = async () => {
