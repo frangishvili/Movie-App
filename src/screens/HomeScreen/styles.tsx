@@ -1,7 +1,8 @@
-import {StyleSheet} from 'react-native';
-import {COLORS, SPACING} from '../../theme/theme';
+import { StyleSheet } from 'react-native'
+import { COLORS, SPACING } from '../../theme/theme'
 
 const styles = StyleSheet.create({
+  mainContent: { flex: 1, backgroundColor: COLORS.Black },
   container: {
     display: 'flex',
     backgroundColor: COLORS.Black,
@@ -21,6 +22,6 @@ const styles = StyleSheet.create({
   containerGap36: {
     gap: SPACING.space_36,
   },
-});
+})
 
-export default styles;
+export default styles
