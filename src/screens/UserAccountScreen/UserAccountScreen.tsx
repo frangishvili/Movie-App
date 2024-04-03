@@ -14,8 +14,8 @@ const UserAccountScreen = ({ navigation }: any) => {
       </View>
 
       <View style={styles.profileContainer}>
-        <Image source={require('../assets/image/avatar.png')} style={styles.avatarImage} />
-        <Text style={styles.avatarText}>John Doe</Text>
+        <Image source={require('../../../assets/images/avatar.png')} style={styles.avatarImage} />
+        <Text style={styles.avatarText}>Profile Photo</Text>
       </View>
 
       <View style={styles.profileContainer}>
