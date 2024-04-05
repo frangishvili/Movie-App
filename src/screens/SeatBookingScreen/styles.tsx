@@ -1,11 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {
-  BORDERRADIUS,
-  COLORS,
-  FONTFAMILY,
-  FONTSIZE,
-  SPACING,
-} from '../../theme/theme';
+import { StyleSheet } from 'react-native'
+import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../theme/theme'
 
 const styles = StyleSheet.create({
   container: {
@@ -125,15 +119,17 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_24,
     color: COLORS.White,
   },
-  buttonText: {
+  buttonBG: {
     borderRadius: BORDERRADIUS.radius_25,
     paddingHorizontal: SPACING.space_24,
     paddingVertical: SPACING.space_10,
+    backgroundColor: COLORS.Orange,
+  },
+  buttonText: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
     color: COLORS.White,
-    backgroundColor: COLORS.Orange,
   },
-});
+})
 
-export default styles;
+export default styles
