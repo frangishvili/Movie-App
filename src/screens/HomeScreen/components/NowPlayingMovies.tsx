@@ -28,6 +28,11 @@ interface NowPlayingMoviesProps {
 const NowPlayingMovies = ({ nowPlayingMoviesList, upcomingMoviesList }: NowPlayingMoviesProps) => {
   const { push } = useNavigation()
 
+  /**
+   * Renders a movie item for the FlatList. If the movie item does not have an original title,
+   * it returns a View with a specific width. Otherwise, it returns a MovieCard component with
+   * the movie details.
+   */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => {
     if (!item.original_title) {
       return (
@@ -38,6 +43,7 @@ const NowPlayingMovies = ({ nowPlayingMoviesList, upcomingMoviesList }: NowPlayi
         ></View>
       )
     }
+
     return (
       <MovieCard
         shoudlMarginatedAtEnd={true}
