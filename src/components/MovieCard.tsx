@@ -33,7 +33,7 @@ const MovieCard = (props: any) => {
       <View
         style={[
           styles.movieCardContainer,
-          props.shoudlMarginatedAtEnd
+          props.shouldMarginAtEnd
             ? props.isFirst
               ? { marginLeft: SPACING.space_36 }
               : props.isLast

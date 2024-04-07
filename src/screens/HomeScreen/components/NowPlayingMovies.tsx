@@ -46,7 +46,7 @@ const NowPlayingMovies = ({ nowPlayingMoviesList, upcomingMoviesList }: NowPlayi
 
     return (
       <MovieCard
-        shoudlMarginatedAtEnd={true}
+        shouldMarginAtEnd={true}
         cardFunction={() => {
           push('MovieDetails', { movieid: item.id })
         }}
