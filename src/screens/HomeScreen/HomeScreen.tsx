@@ -16,6 +16,7 @@ const HomeScreen = ({ navigation }: any) => {
   const [popularMoviesList, setPopularMoviesList] = useState<any>(undefined)
   const [upcomingMoviesList, setUpcomingMoviesList] = useState<any>(undefined)
 
+  // Destructuring the methods from the useMoviesList hook.
   const { getNowPlayingMoviesList, getUpcomingMoviesList, getPopularMoviesList } = useMoviesList()
 
   useEffect(() => {
@@ -31,19 +32,19 @@ const HomeScreen = ({ navigation }: any) => {
     })()
   }, [])
 
+  // This function is used to navigate to the 'Search' screen when called.
   const searchMoviesFunction = () => {
     navigation.navigate('Search')
   }
+
   if (!nowPlayingMoviesList || !popularMoviesList || !upcomingMoviesList) {
     return (
       <SafeAreaView style={styles.mainContent}>
         <ScrollView style={styles.container} bounces={false} contentContainerStyle={styles.scrollViewContainer}>
           <StatusBar hidden />
-
           <View style={styles.InputHeaderContainer}>
             <InputHeader />
           </View>
-
           <View style={styles.loadingContainer}>
             <ActivityIndicator size={'large'} color={COLORS.Orange} />
           </View>
@@ -51,6 +52,7 @@ const HomeScreen = ({ navigation }: any) => {
       </SafeAreaView>
     )
   }
+
   return (
     <SafeAreaView style={styles.mainContent}>
       <ScrollView style={styles.container} bounces={false}>
