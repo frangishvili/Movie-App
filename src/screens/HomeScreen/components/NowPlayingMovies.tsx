@@ -29,9 +29,9 @@ const NowPlayingMovies = ({ nowPlayingMoviesList, upcomingMoviesList }: NowPlayi
   const { push } = useNavigation()
 
   /**
-   * Renders a movie item for the FlatList. If the movie item does not have an original title,
-   * it returns a View with a specific width. Otherwise, it returns a MovieCard component with
-   * the movie details.
+   * This function is responsible for rendering each movie item in the FlatList.
+   * If the movie item lacks an original title, it returns a View with a calculated width.
+   * If the movie item has an original title, it returns a MovieCard component populated with the movie's details.
    */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => {
     if (!item.original_title) {
