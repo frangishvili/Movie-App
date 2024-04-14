@@ -14,6 +14,7 @@ const useMoviesList = () => {
    * Fetches the list of now playing movies.
    * @returns {Promise<any>} Promise that resolves to the list of now playing movies.
    */
+
   const getNowPlayingMoviesList = async () => {
     try {
       let response = await fetch(nowPlayingMovies)
@@ -28,6 +29,7 @@ const useMoviesList = () => {
    * Fetches the list of upcoming movies.
    * @returns {Promise<any>} Promise that resolves to the list of upcoming movies.
    */
+
   const getUpcomingMoviesList = async () => {
     try {
       let response = await fetch(upcomingMovies)
@@ -42,6 +44,7 @@ const useMoviesList = () => {
    * Fetches the list of popular movies.
    * @returns {Promise<any>} Promise that resolves to the list of popular movies.
    */
+
   const getPopularMoviesList = async () => {
     try {
       let response = await fetch(popularMovies)
