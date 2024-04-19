@@ -18,6 +18,11 @@ interface UpcomingMoviesProps {
 const UpcomingMovies = ({ upcomingMoviesList }: UpcomingMoviesProps) => {
   const { push } = useNavigation()
 
+  /**
+   * Renders an individual movie card within the list of upcoming movies.
+   * @returns {JSX.Element} A SubMovieCard component populated with the movie's data.
+   */
+
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
     <SubMovieCard
       shoudlMarginatedAtEnd={true}
