@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../theme/theme'
 
 const styles = StyleSheet.create({
+  mainContent: { flex: 1, backgroundColor: COLORS.Black },
   container: {
     display: 'flex',
     flex: 1,
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     alignSelf: 'center',
+    borderRadius: 20,
   },
   clockIcon: {
     fontSize: FONTSIZE.size_20,
