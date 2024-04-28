@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Text,
-  View,
-  ScrollView,
-  ActivityIndicator,
-  StatusBar,
-  FlatList,
-  TouchableOpacity,
-  SafeAreaView,
-} from 'react-native'
+import { Text, View, ScrollView, ActivityIndicator, StatusBar, FlatList, TouchableOpacity, SafeAreaView } from 'react-native'
 
 import { baseImagePath } from '../../api/apicall'
 import { COLORS } from '../../theme/theme'
@@ -28,6 +19,11 @@ const MovieDetailsScreen = ({ navigation, route }: any) => {
 
   const { getMovieDetails, getMovieCastDetails } = useMovieDetails()
 
+  // This useEffect hook is used to fetch movie details and cast details when the component mounts.
+  // It defines an async function fetchMovieData that fetches the movie details and cast details using the movie id from the route params.
+  // The fetched movie data is then set to the movieData state and the cast data to the movieCastData state.
+  // The fetchMovieData function is then called immediately after its definition.
+  // The empty dependency array [] ensures that this useEffect hook only runs once, when the component mounts.
   useEffect(() => {
     const fetchMovieData = async () => {
       const movieData = await getMovieDetails(route.params.movieid)
