@@ -19,6 +19,11 @@ const HomeScreen = ({ navigation }: any) => {
   // Destructuring the methods from the useMoviesList hook.
   const { getNowPlayingMoviesList, getUpcomingMoviesList, getPopularMoviesList } = useMoviesList()
 
+  // This useEffect hook is used to fetch the movie lists when the component mounts.
+  // It uses an immediately invoked async function to handle the asynchronous operations.
+  // The getNowPlayingMoviesList, getPopularMoviesList, and getUpcomingMoviesList methods are called to fetch the respective movie lists.
+  // The results are then set to the corresponding state variables.
+  // Note: For the nowPlayingMoviesList, two dummy items are added at the beginning and end of the list.
   useEffect(() => {
     ;(async () => {
       let tempNowPlaying = await getNowPlayingMoviesList()
