@@ -11,6 +11,12 @@ import styles from './styles'
 const TicketScreen = ({ navigation, route }: any) => {
   const [ticketData, setTicketData] = useState<any>(route.params)
 
+  /**
+   * This useEffect hook is used to fetch the ticket data from the encrypted storage.
+   * It runs once when the component is mounted.
+   * If the ticket data exists in the storage, it is parsed from JSON and set to the ticketData state.
+   * If an error occurs during this process, it is logged to the console.
+   */
   useEffect(() => {
     ;(async () => {
       try {
