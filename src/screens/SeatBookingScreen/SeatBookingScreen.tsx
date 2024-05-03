@@ -9,6 +9,7 @@ import useBookingServices from '../../hooks/useBookingServices'
 import styles from './styles'
 
 const SeatBookingScreen = ({ navigation, route }: any) => {
+  // Destructuring the values returned from the useBookingServices hook
   const {
     dateArray,
     timeArray,
