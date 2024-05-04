@@ -80,9 +80,6 @@ const useBookingServices = (route: any, navigation: any) => {
    * If the seat number is already in the selectedSeatArray, it removes the seat number from the array.
    * It also updates the price based on the number of selected seats (each seat costs 5.0).
    * Finally, it updates the twoDSeatArray to reflect the new seating arrangement.
-   * @param {number} index - The index of the row in the seating arrangement.
-   * @param {number} subindex - The index of the seat in the row.
-   * @param {number} num - The number of the seat.
    */
 
   const selectSeat = (index: number, subindex: number, num: number) => {
