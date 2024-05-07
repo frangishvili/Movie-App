@@ -168,6 +168,19 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_14,
     color: COLORS.WhiteRGBA15,
   },
+  mainContent: { flex: 1, backgroundColor: COLORS.Black },
+  scrollViewContainer: {
+    flex: 1,
+  },
+  InputHeaderContainer: {
+    marginHorizontal: SPACING.space_36,
+    marginTop: SPACING.space_28,
+  },
+  loadingContainer: {
+    flex: 1,
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
 })
 
 export default styles
