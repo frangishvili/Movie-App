@@ -6,8 +6,7 @@ import NowPlayingMovies from './components/NowPlayingMovies'
 import PopularMovies from './components/PopularMovies'
 import UpcomingMovies from './components/UpcomingMovies'
 import useMoviesList from '../../hooks/useMovieList'
-
-import { COLORS } from '../../theme/theme'
+import Loader from '../../components/Loader'
 
 import styles from './styles'
 
@@ -42,19 +41,7 @@ const HomeScreen = ({ navigation }: any) => {
   }
 
   if (!nowPlayingMoviesList || !popularMoviesList || !upcomingMoviesList) {
-    return (
-      <SafeAreaView style={styles.mainContent}>
-        <ScrollView style={styles.container} bounces={false} contentContainerStyle={styles.scrollViewContainer}>
-          <StatusBar hidden />
-          <View style={styles.InputHeaderContainer}>
-            <InputHeader />
-          </View>
-          <View style={styles.loadingContainer}>
-            <ActivityIndicator size={'large'} color={COLORS.Orange} />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    )
+    return <Loader />
   }
 
   return (
