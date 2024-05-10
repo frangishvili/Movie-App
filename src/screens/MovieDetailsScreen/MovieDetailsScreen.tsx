@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, ScrollView, ActivityIndicator, StatusBar, FlatList, TouchableOpacity, SafeAreaView } from 'react-native'
+import { Text, View, ScrollView, StatusBar, FlatList, TouchableOpacity, SafeAreaView } from 'react-native'
 
 import { baseImagePath } from '../../api/apicall'
-import { COLORS } from '../../theme/theme'
 import useMovieDetails from '../../hooks/useMovieDetails'
-import AppHeader from '../../components/AppHeader'
 import CategoryHeader from '../../components/CategoryHeader'
 import CastCard from '../../components/CastCard'
 import MovieDetailsHeader from './components/MovieDetailsHeader'
 import MovieDetailsInfo from './components/MovieDetailsInfo'
 import MovieRate from './components/MovieRate'
+import Loader from '../../components/Loader'
 
 import styles from './styles'
 
@@ -36,23 +35,7 @@ const MovieDetailsScreen = ({ navigation, route }: any) => {
   }, [])
 
   if (!movieData || !movieCastData) {
-    return (
-      <SafeAreaView style={styles.mainContent}>
-        <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.scrollViewContainer}
-          bounces={false}
-          showsVerticalScrollIndicator={false}
-        >
-          <View style={styles.appHeaderContainer}>
-            <AppHeader name="close" header={''} action={() => navigation.goBack()} />
-          </View>
-          <View style={styles.loadingContainer}>
-            <ActivityIndicator size={'large'} color={COLORS.Orange} />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    )
+    return <Loader />
   }
 
   return (
