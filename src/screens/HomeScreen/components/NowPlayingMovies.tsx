@@ -30,7 +30,6 @@ const NowPlayingMovies = ({ nowPlayingMoviesList, upcomingMoviesList }: NowPlayi
 
   /**
    * This function is responsible for rendering each movie item in the FlatList.
-   * If the movie item lacks an original title, it returns a View with a calculated width.
    */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => {
     if (!item.original_title) {
