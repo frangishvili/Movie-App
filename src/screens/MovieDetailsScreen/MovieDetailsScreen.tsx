@@ -20,7 +20,6 @@ const MovieDetailsScreen = ({ navigation, route }: any) => {
 
   // This useEffect hook is used to fetch movie details and cast details when the component mounts.
   // It defines an async function fetchMovieData that fetches the movie details and cast details using the movie id from the route params.
-  // The fetched movie data is then set to the movieData state and the cast data to the movieCastData state.
 
   useEffect(() => {
     const fetchMovieData = async () => {
