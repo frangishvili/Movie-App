@@ -23,7 +23,6 @@ const PopularMovies = ({ popularMoviesList, upcomingMoviesList }: PopularMoviesP
    * Renders a single movie card for the popular movies list.
    * @param {object} item - The movie object containing the movie's data.
    * @param {number} index - The index of the movie in the list.
-   * @returns {JSX.Element} A SubMovieCard component with the movie's data.
    */
 
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
