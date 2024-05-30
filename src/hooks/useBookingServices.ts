@@ -78,8 +78,6 @@ const useBookingServices = (route: any, navigation: any) => {
    * If the seat is not taken, it toggles the 'selected' status of the seat.
    * If the seat number is not in the selectedSeatArray, it adds the seat number to the array.
    * If the seat number is already in the selectedSeatArray, it removes the seat number from the array.
-   * It also updates the price based on the number of selected seats (each seat costs 5.0).
-   * Finally, it updates the twoDSeatArray to reflect the new seating arrangement.
    */
 
   const selectSeat = (index: number, subindex: number, num: number) => {
