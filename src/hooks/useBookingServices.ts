@@ -28,9 +28,9 @@ const useBookingServices = (route: any, navigation: any) => {
 
   /**
    * Generates a two-dimensional array representing the seating arrangement.
-   * Each seat is represented as an object with properties: 'number', 'taken', and 'selected'.
-   * 'number' is the seat number, 'taken' indicates if the seat is already taken, and 'selected' indicates if the seat is selected by the user.
-   * The seating arrangement starts with 3 seats per row, increases to 5 seats per row after the 4th row, and then decreases back to 3 seats per row after reaching 9 seats per row.
+   * Each seat is an object with properties: 'number', 'taken', and 'selected'.
+   * 'number' is the seat number, 'taken' indicates if the seat is occupied, and 'selected' indicates if the seat is chosen by the user.
+   * The seating arrangement begins with 3 seats per row, expands to 5 seats per row after the 4th row, and then contracts back to 3 seats per row after reaching 9 seats per row.
    * @returns {Array} A two-dimensional array representing the seating arrangement.
    */
 
