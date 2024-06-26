@@ -3,8 +3,8 @@ import { movieCastDetails, movieDetails } from '../api/apicall'
 /**
  * Custom hook to fetch details of a movie and its cast details.
  * @returns {{
- *   getMovieDetails: Function,
- *   getMovieCastDetails: Function
+ *   getMovieDetails: (movieId: number) => Promise<any>,
+ *   getMovieCastDetails: (movieId: number) => Promise<any>
  * }} Object containing functions to fetch movie details and cast details.
  */
 
