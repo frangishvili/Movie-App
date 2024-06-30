@@ -22,8 +22,9 @@ const PopularMovies = ({ popularMoviesList, upcomingMoviesList }: PopularMoviesP
   /**
    * Renders a single movie card for the popular movies list.
    * The card includes movie details and navigation to the movie details screen.
+   * @param item - The movie item to be rendered.
+   * @param index - The index of the movie item in the list.
    */
-
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
     <SubMovieCard
       shoudlMarginatedAtEnd={true}
