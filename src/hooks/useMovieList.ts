@@ -43,7 +43,7 @@ const useMoviesList = () => {
   /**
    * Fetches the list of popular movies.
    * @returns {Promise<any>} Promise that resolves to the list of popular movies.
-   * @throws {Error} Will throw an error if the fetch operation fails.
+   * @throws {Error} Will log an error message if the fetch operation fails.
    */
   const getPopularMoviesList = async () => {
     try {
