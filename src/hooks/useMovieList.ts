@@ -28,6 +28,7 @@ const useMoviesList = () => {
   /**
    * Fetches the list of upcoming movies.
    * @returns {Promise<any>} Promise that resolves to the list of upcoming movies.
+   * @throws {Error} Will log an error message if the fetch operation fails.
    */
 
   const getUpcomingMoviesList = async () => {
