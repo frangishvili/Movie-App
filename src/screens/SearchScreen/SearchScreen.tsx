@@ -13,11 +13,12 @@ const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
   /**
-   * This function, `searchMoviesFunction`, performs a movie search based on the provided name.
-   * It initiates an asynchronous API call using the `fetch` function. The `searchMovies` function is used to construct the API endpoint.
-   * The API response is then converted into JSON format.
-   * The results from the JSON response are stored in the `searchList` state variable.
-   * If an error occurs during this process, it is caught and logged to the console.
+   * Performs a movie search based on the provided name.
+   * Initiates an asynchronous API call using the `fetch` function.
+   * Constructs the API endpoint using the `searchMovies` function.
+   * Converts the API response into JSON format.
+   * Stores the results from the JSON response in the `searchList` state variable.
+   * Logs any errors that occur during the process to the console.
    */
   const searchMoviesFunction = async (name: string) => {
     try {
