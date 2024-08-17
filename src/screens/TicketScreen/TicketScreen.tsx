@@ -15,6 +15,7 @@ const TicketScreen = ({ navigation, route }: any) => {
    * This useEffect hook retrieves ticket data from encrypted storage.
    * It executes once upon component mount.
    * If ticket data is present in storage, it is parsed from JSON and updated in the ticketData state.
+   * If new ticket data is passed via route params, it updates the ticketData state.
    * Any errors during this process are logged to the console.
    */
   useEffect(() => {
