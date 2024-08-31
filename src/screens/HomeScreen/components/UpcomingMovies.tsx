@@ -24,6 +24,8 @@ const UpcomingMovies = ({ upcomingMoviesList }: UpcomingMoviesProps) => {
    * @param {Movie} param.item - The movie item to render.
    * @param {number} param.index - The index of the movie item in the list.
    * @returns {JSX.Element} A SubMovieCard component populated with the movie's data.
+   * @param {boolean} param.isFirst - Indicates if the movie item is the first in the list.
+   * @param {boolean} param.isLast - Indicates if the movie item is the last in the list.
    */
 
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
