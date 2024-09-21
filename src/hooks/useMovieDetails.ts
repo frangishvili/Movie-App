@@ -12,8 +12,9 @@ const useMovieDetails = () => {
   /**
    * Fetches details of a movie by its ID.
    * @param {number} movieId - The ID of the movie to fetch details for.
-   * @returns {Promise<object>} A promise that resolves to the details of the movie.
+   * @returns {Promise<object>} A promise that resolves to the details of the movie, or an error message if the fetch fails.
    */
+
   const getMovieDetails = async (movieId: number) => {
     try {
       let response = await fetch(movieDetails(movieId))

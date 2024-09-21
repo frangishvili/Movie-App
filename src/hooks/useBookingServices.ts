@@ -29,7 +29,6 @@ const useBookingServices = (route: any, navigation: any) => {
   /**
    * Generates a 2D array representing the seating arrangement.
    * Each seat has properties: 'number', 'taken', and 'selected'.
-   * The arrangement starts with 3 seats per row, expands to 5 seats after the 4th row, and contracts back to 3 seats after reaching 9 seats per row.
    * @returns {Array<Array<{number: number, taken: boolean, selected: boolean}>>} A 2D array of seats.
    */
 
