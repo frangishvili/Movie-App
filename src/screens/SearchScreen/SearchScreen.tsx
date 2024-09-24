@@ -18,7 +18,6 @@ const SearchScreen = ({ navigation }: any) => {
    * Constructs the API endpoint using the `searchMovies` function.
    * Converts the API response into JSON format.
    * Stores the results from the JSON response in the `searchList` state variable.
-   * Logs any errors that occur during the process to the console.
    */
   const searchMoviesFunction = async (name: string) => {
     try {
