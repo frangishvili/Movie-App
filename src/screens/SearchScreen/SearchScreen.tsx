@@ -15,7 +15,6 @@ const SearchScreen = ({ navigation }: any) => {
   /**
    * Performs a movie search based on the provided name.
    * Initiates an asynchronous API call using the `fetch` function.
-   * Constructs the API endpoint using the `searchMovies` function.
    */
   const searchMoviesFunction = async (name: string) => {
     try {
