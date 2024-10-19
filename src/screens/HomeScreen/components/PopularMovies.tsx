@@ -24,7 +24,6 @@ const PopularMovies = ({ popularMoviesList, upcomingMoviesList }: PopularMoviesP
    * The card includes movie details and navigation to the movie details screen.
    * @param {Object} param - The parameter object.
    * @param {Movie} param.item - The movie item to be rendered.
-   * @param {number} param.index - The index of the movie item in the list.
    * @returns {JSX.Element} The rendered SubMovieCard component.
    */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
