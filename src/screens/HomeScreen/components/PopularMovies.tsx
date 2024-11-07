@@ -21,9 +21,9 @@ const PopularMovies = ({ popularMoviesList, upcomingMoviesList }: PopularMoviesP
 
   /**
    * Renders a single movie card for the popular movies list.
-   * This function is passed to the FlatList's renderItem prop.
+   * This function is utilized by the FlatList's renderItem prop.
    * @param {{ item: Movie; index: number }} param - The movie item and its index in the list.
-   * @returns {JSX.Element} The SubMovieCard component for the given movie.
+   * @returns {JSX.Element} The SubMovieCard component for the given movie, with appropriate margins and event handling.
    */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
     <SubMovieCard
