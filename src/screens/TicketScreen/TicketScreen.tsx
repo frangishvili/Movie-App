@@ -12,9 +12,9 @@ const TicketScreen = ({ navigation, route }: any) => {
   const [ticketData, setTicketData] = useState<any>(route.params)
 
   /**
-   * This useEffect hook is triggered after the component mounts. It attempts to
-   * retrieve ticket data from encrypted storage. If the data is found, it is parsed
-   * from a JSON string into an object and then set to the ticketData state.
+   * useEffect hook that runs once after the component mounts.
+   * It retrieves ticket data from encrypted storage, parses it from JSON,
+   * and updates the ticketData state if data is present.
    */
   useEffect(() => {
     ;(async () => {
