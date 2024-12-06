@@ -13,10 +13,12 @@ const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
   /**
-   * Executes a movie search using the provided name.
-   * Initiates an asynchronous API call to fetch movie data.
-   * Updates the search list with the results from the API response.
+   * Performs a movie search using the specified name.
+   * Initiates an asynchronous API call to retrieve movie data.
+   * Updates the searchList state with the results obtained from the API response.
+   * Logs an error message if the API call fails.
    */
+
   const searchMoviesFunction = async (name: string) => {
     try {
       let response = await fetch(searchMovies(name))
