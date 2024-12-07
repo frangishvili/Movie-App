@@ -13,10 +13,9 @@ const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
   /**
-   * Performs a movie search using the specified name.
-   * Initiates an asynchronous API call to retrieve movie data.
-   * Updates the searchList state with the results obtained from the API response.
-   * Logs an error message if the API call fails.
+   * Searches for movies by name.
+   * Updates the searchList state with API results.
+   * Logs errors if the API call fails.
    */
 
   const searchMoviesFunction = async (name: string) => {
