@@ -31,6 +31,8 @@ const NowPlayingMovies = ({ nowPlayingMoviesList, upcomingMoviesList }: NowPlayi
   /**
    * Renders each movie item in the FlatList.
    * If the movie item lacks an original title, it returns an empty view with calculated width.
+   * @param {Object} item - The movie item to render.
+   * @param {number} index - The index of the movie item in the list.
    * @returns {JSX.Element} The rendered movie item or an empty view if the title is missing.
    */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => {
