@@ -18,12 +18,11 @@ interface PopularMoviesProps {
 
 const PopularMovies = ({ popularMoviesList, upcomingMoviesList }: PopularMoviesProps) => {
   const { push } = useNavigation()
-
   /**
-   * Renders a single movie card for the popular movies list.
-   * This function is utilized by the FlatList's renderItem prop.
-   * @param {{ item: Movie; index: number }} param - The movie item and its index in the list.
-   * @returns {JSX.Element} The SubMovieCard component for the given movie, with appropriate margins and event handling.
+   * Renders a SubMovieCard component for each movie in the popular movies list.
+   * This function is used by the FlatList's renderItem prop to display each movie.
+   * @param {{ item: Movie; index: number }} param - Contains the movie item and its index in the list.
+   * @returns {JSX.Element} A SubMovieCard component with appropriate styling and navigation functionality.
    */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
     <SubMovieCard
