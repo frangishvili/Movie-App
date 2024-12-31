@@ -19,10 +19,11 @@ const UpcomingMovies = ({ upcomingMoviesList }: UpcomingMoviesProps) => {
   const { push } = useNavigation()
 
   /**
-   * Renders an individual movie card within the list of upcoming movies.
-   * @param {Object} param - The parameter object.
+   * Renders a SubMovieCard component for each movie in the upcoming movies list.
+   * @param {Object} param - The parameter object containing item and index.
+   * @param {Movie} param.item - The movie object to be displayed.
    * @param {number} param.index - The index of the movie item in the list.
-   * @returns {JSX.Element} A SubMovieCard component populated with the movie's data.
+   * @returns {JSX.Element} A SubMovieCard component with the movie's details.
    */
 
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
