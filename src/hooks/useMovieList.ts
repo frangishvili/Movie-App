@@ -11,8 +11,8 @@ import { upcomingMovies, nowPlayingMovies, popularMovies } from '../api/apicall'
 
 const useMoviesList = () => {
   /**
-   * Fetches the list of now playing movies.
-   * @returns {Promise<Object>} Promise that resolves to an object containing the list of now playing movies.
+   * Fetches the list of currently playing movies.
+   * @returns {Promise<Object>} Promise that resolves to an object containing the list of currently playing movies.
    */
 
   const getNowPlayingMoviesList = async () => {
