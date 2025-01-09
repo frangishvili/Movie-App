@@ -21,6 +21,7 @@ const HomeScreen = ({ navigation }: any) => {
   // This useEffect hook is triggered when the component mounts.
   // It uses an immediately invoked async function to fetch and set the movie lists from the API.
   // Dummy movie objects are added to the now playing list for testing purposes.
+  // The fetched movie lists are then set to their respective state variables.
 
   useEffect(() => {
     ;(async () => {
