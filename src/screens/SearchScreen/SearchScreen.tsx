@@ -14,7 +14,6 @@ const SearchScreen = ({ navigation }: any) => {
 
   /**
    * Asynchronously fetches a list of movies matching the provided name.
-   * Updates the searchList state with the results obtained from the API.
    * @param {string} name - The name of the movie to search for.
    */
 
