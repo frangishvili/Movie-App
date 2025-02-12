@@ -13,7 +13,6 @@ const TicketScreen = ({ navigation, route }: any) => {
 
   /**
    * useEffect hook that executes when the component mounts.
-   * It retrieves ticket data from encrypted storage.
    */
   useEffect(() => {
     ;(async () => {
