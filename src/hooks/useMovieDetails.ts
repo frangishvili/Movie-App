@@ -10,7 +10,6 @@ import { movieCastDetails, movieDetails } from '../api/apicall'
 
 const useMovieDetails = () => {
   /**
-   * Fetches details of a movie by its ID.
    * @param {number} movieId - The ID of the movie to fetch details for.
    * @returns {Promise<object>} A promise that resolves to the details of the movie, or logs an error message if the fetch fails.
    */
