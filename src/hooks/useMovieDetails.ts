@@ -10,10 +10,10 @@ import { movieCastDetails, movieDetails } from '../api/apicall'
 
 const useMovieDetails = () => {
   /**
-   * @param {number} movieId - The ID of the movie to fetch details for.
-   * @returns {Promise<object>} A promise that resolves to the details of the movie, or logs an error message if the fetch fails.
+   * Fetches detailed information about a movie by its ID.
+   * @param {number} movieId - The unique identifier of the movie to retrieve details for.
+   * @returns {Promise<object>} A promise that resolves to the movie's detailed information, or logs an error message if the fetch operation fails.
    */
-
   const getMovieDetails = async (movieId: number) => {
     try {
       let response = await fetch(movieDetails(movieId))
