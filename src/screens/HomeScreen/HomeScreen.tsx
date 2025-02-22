@@ -21,7 +21,6 @@ const HomeScreen = ({ navigation }: any) => {
 
   // This useEffect hook runs once when the component mounts.
   // It uses an immediately invoked async function to fetch movie lists from the API
-  // and updates the state with the fetched data.
 
   useEffect(() => {
     ;(async () => {
