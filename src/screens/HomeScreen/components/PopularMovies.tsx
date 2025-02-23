@@ -20,8 +20,11 @@ const PopularMovies = ({ popularMoviesList, upcomingMoviesList }: PopularMoviesP
   const { push } = useNavigation()
   /**
    * Renders a SubMovieCard component for each movie in the popular movies list.
-   * @param {{ item: Movie; index: number }} param - Contains the movie item and its index in the list.
-   * @returns {JSX.Element} A SubMovieCard component with appropriate styling and navigation functionality.
+   * @param {Object} param - The parameter object.
+   * @param {Movie} param.item - The movie item to be rendered.
+   * @param {number} param.index - The index of the movie item in the list.
+   * @returns {JSX.Element} A SubMovieCard component with styling and navigation functionality.
+   * The card includes a title, image, and navigation to the movie details screen.
    */
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
     <SubMovieCard
