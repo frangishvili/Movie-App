@@ -21,8 +21,9 @@ const UpcomingMovies = ({ upcomingMoviesList }: UpcomingMoviesProps) => {
   /**
    * Renders a SubMovieCard component for each movie in the upcoming movies list.
    * @param {Object} param - The parameter object containing the movie item and its index.
+   * @param {Movie} param.item - The movie object containing details like id, title, and poster path.
    * @param {number} param.index - The index of the movie in the list.
-   * @returns {JSX.Element} A SubMovieCard component displaying the movie's details.
+   * @returns {JSX.Element} A SubMovieCard component displaying the movie's details, including title and image.
    */
 
   const renderItem = ({ item, index }: { item: Movie; index: number }) => (
