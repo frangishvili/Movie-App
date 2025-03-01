@@ -12,7 +12,11 @@ import styles from './styles'
 const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
-  // Asynchronous function to fetch and update the movie list based on the search query
+  /**
+   * Fetches movies based on search query and updates the searchList state
+   * @param name - The search query string
+   */
+
   const searchMoviesFunction = async (name: string) => {
     try {
       let response = await fetch(searchMovies(name))
