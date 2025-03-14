@@ -14,7 +14,6 @@ const TicketScreen = ({ navigation, route }: any) => {
   / /**
   * useEffect hook that runs on component mount to retrieve and process ticket data.
   * Fetches the stored ticket information from EncryptedStorage and updates the
-  * component state. Handles any potential errors during the retrieval process.
   */
   useEffect(() => {
     ;(async () => {
