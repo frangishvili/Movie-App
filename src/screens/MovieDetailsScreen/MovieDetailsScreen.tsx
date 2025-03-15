@@ -21,8 +21,6 @@ const MovieDetailsScreen = ({ navigation, route }: any) => {
  /**
    * The searchMoviesFunction is an asynchronous function that fetches movie data
    * from the API based on the provided search query. It makes a network request
-   * using the searchMovies endpoint and updates the searchList state with the
-   * to the console.
    * @param name - The search query string to find matching movies
    */
   useEffect(() => {
