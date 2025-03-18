@@ -20,7 +20,6 @@ const MovieDetailsScreen = ({ navigation, route }: any) => {
 
  /**
    * The searchMoviesFunction is an asynchronous function that fetches movie data
-   * @param name - The search query string to find matching movies
    */
   useEffect(() => {
     const fetchMovieData = async () => {
