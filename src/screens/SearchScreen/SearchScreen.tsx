@@ -16,7 +16,6 @@ const SearchScreen = ({ navigation }: any) => {
   /**
  * Searches movies by name and updates searchList state.
  * @param name - Search query string
- * @throws Logs errors to console if API call fails
  */
 
   const searchMoviesFunction = async (name: string) => {
