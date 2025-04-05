@@ -13,6 +13,12 @@ const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
 
+  /**
+ * Searches movies by name and updates searchList state.
+ * @param name - Search query string
+ * @throws Logs errors to console if API call fails
+ */
+
   const searchMoviesFunction = async (name: string) => {
     try {
       let response = await fetch(searchMovies(name))
