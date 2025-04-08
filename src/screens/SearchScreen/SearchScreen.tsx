@@ -15,7 +15,6 @@ const SearchScreen = ({ navigation }: any) => {
 
   /**
  * Searches movies by name and updates searchList state.
- * @param name - Search query string
  */
 
   const searchMoviesFunction = async (name: string) => {
