@@ -15,7 +15,7 @@ const HomeScreen = ({ navigation }: any) => {
   const [popularMoviesList, setPopularMoviesList] = useState<any>(undefined)
   const [upcomingMoviesList, setUpcomingMoviesList] = useState<any>(undefined)
 
-  // Extracting functions from the useMoviesList hook to fetch different categories of movies.
+
 
   const { getNowPlayingMoviesList, getUpcomingMoviesList, getPopularMoviesList } = useMoviesList()
 
