@@ -19,7 +19,6 @@ const HomeScreen = ({ navigation }: any) => {
 
   const { getNowPlayingMoviesList, getUpcomingMoviesList, getPopularMoviesList } = useMoviesList()
 
-  // This useEffect hook runs once when the component mounts.
 
   useEffect(() => {
     ;(async () => {
