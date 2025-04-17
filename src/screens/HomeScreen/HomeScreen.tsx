@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }: any) => {
     })()
   }, [])
 
-  // This function is used to navigate to the 'Search' screen when called.
+
   const searchMoviesFunction = () => {
     navigation.navigate('Search')
   }
