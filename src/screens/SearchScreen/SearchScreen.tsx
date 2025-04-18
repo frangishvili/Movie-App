@@ -13,6 +13,12 @@ const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
 
+  /**
+ * Searches for movies by name and updates the search results list.
+ * @param {string} name - The movie name/title to search for
+ * @returns {Promise<void>} - Doesn't return anything directly but updates the searchList state
+ */
+
 
   const searchMoviesFunction = async (name: string) => {
     try {
