@@ -15,7 +15,6 @@ const SearchScreen = ({ navigation }: any) => {
 
   /**
  * Searches for movies by name and updates the search results list.
- * @param {string} name - The movie name/title to search for
  */
 
 
