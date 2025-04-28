@@ -18,9 +18,6 @@ const MovieDetailsScreen = ({ navigation, route }: any) => {
 
   const { getMovieDetails, getMovieCastDetails } = useMovieDetails()
 
- /**
-   * The searchMoviesFunction is an asynchronous function that fetches movie data
-   */
   useEffect(() => {
     const fetchMovieData = async () => {
       const movieData = await getMovieDetails(route.params.movieid)
