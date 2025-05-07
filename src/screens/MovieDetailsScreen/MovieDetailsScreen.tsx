@@ -19,7 +19,6 @@ const MovieDetailsScreen = ({ navigation, route }: any) => {
   const { getMovieDetails, getMovieCastDetails } = useMovieDetails()
 
   useEffect(() => {
-     // Fetch movie details and cast data when component mounts
     const fetchMovieData = async () => {
       const movieData = await getMovieDetails(route.params.movieid)
       const movieCastData = await getMovieCastDetails(route.params.movieid)
