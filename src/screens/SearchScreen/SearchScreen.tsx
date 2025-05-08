@@ -12,6 +12,10 @@ import styles from './styles'
 const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
+  /**
+ * Searches for movies by name using the movie API and updates the search results state.
+ * @param {string} name - The movie title or keywords to search for.
+ */
   const searchMoviesFunction = async (name: string) => {
     try {
       let response = await fetch(searchMovies(name))
