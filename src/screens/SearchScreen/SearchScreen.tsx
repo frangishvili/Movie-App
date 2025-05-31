@@ -13,7 +13,7 @@ const SearchScreen = ({ navigation }: any) => {
   const [searchList, setSearchList] = useState([])
 
   /**
- * Searches for movies by name using 
+ * Searches for movies by name 
  */
   const searchMoviesFunction = async (name: string) => {
     try {
