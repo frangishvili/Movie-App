@@ -15,7 +15,6 @@ const SearchScreen = ({ navigation }: any) => {
 /**
  * Searches for movies by name and updates the search results list.
  * საძიებო ფუნქცია, რომელიც ფილმებს უყურებს სახელის მიხედვით და ახდენს ძიების შედეგების განახლებას.
- * 
  * @param name - The movie name to search for / ფილმის სახელი, რომლის მოძიებაც გვსურს
  */
   const searchMoviesFunction = async (name: string) => {
